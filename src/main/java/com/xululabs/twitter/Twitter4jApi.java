@@ -33,7 +33,13 @@ public class Twitter4jApi {
 		Twitter twitter = tf.getInstance();
 		return twitter;
 	}
-
+    /**
+     * use to search in twitter for given keyword
+     * @param twitter
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
 	public ArrayList<Map<String, Object>> search(Twitter twitter, String keyword)
 			throws Exception {
 		int searchResultCount = 0;

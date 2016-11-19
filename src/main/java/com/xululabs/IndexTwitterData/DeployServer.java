@@ -97,7 +97,6 @@ public class DeployServer extends AbstractVerticle {
 	    int keywordsIndex = 0;
 	    int credentialsIndex = 0;
 	    ObjectMapper mapper = new ObjectMapper();
-	    //String keyword = (routingContext.request().getParam("keyword") == null) ? "['cricket', 'football']" : routingContext.request().getParam("keyword");
 	    String keywordsJson = (routingContext.request().getParam("keywords") == null) ? "['cricket', 'football']" : routingContext.request().getParam("keywords");
 	    String credentialsJson = (routingContext.request().getParam("credentials") == null) ? "[]" : routingContext.request().getParam("credentials");
    
@@ -132,22 +131,9 @@ public class DeployServer extends AbstractVerticle {
        	keywordsIndex++;
        	credentialsIndex++;
        	
-       }
-         
-         
+       }        
    	  }
    	response = "{status : 'success'}";
-    	//////////////
-//      ArrayList<Map<String, Object>> tweets = this.searchTweets(this.getTwitterInstance(), keyword);
-//      List<ArrayList<Map<String, Object>>> bulks = new LinkedList<ArrayList<Map<String, Object>>>();
-//      for (int i = 0; i < tweets.size(); i += bulkSize) {
-//        ArrayList<Map<String, Object>>  bulk = new  ArrayList<Map<String, Object>>(tweets.subList(i, Math.min(i + bulkSize, tweets.size())));
-//        bulks.add(bulk);
-//      }
-//      for(ArrayList<Map<String, Object>> tweetsList : bulks){
-//              this.indexInES(tweetsList);
-//      }    
-			// response = "{status : 'success'}";
     } catch (Exception ex) {
       response = "{status: 'error', 'msg' : " + ex.getMessage() + "}";
     }
