@@ -56,7 +56,6 @@ public class Twitter4jApi {
 				searchResultCount = queryResult.getTweets().size();
 				requestsCount++;
 				for (Status tweet : queryResult.getTweets()) {
-					System.out.println( tweet.getText());
 					Map<String, Object> tweetInfo = new HashMap<String, Object>();
 					tweetInfo.put("id", tweet.getId());
 					tweetInfo.put("tweet", tweet.getText());
